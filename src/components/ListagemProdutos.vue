@@ -21,7 +21,7 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
                 isMobile }}
             <span v-if="isMobile">É móvel</span>
         </h1>
-        <div class="container">
+        <div class="container" :class="isMobile ? 'screenMobile' : 'screenDesktop'">
             <div class="card" v-for="produto in produtos" :key="produto.id">
                 <h1 class="card--title">{{ produto.title }}</h1>
                 <p>{{ produto.description }}</p>
@@ -33,6 +33,29 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
 </template>
 
 <style scoped>
+
+.screenMobile{
+    color: red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0;
+}
+.screenDesktop{
+    color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+
 @media (max-width: 768px) {
     .container {
         gap: 0.5rem;

@@ -16,11 +16,11 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
 
 <template>
     <div>
-        <h1>
+        <!-- <h1>
             Produtos - {{ browserWidth }} - {{ deviceWidth }} - {{
                 isMobile }}
             <span v-if="isMobile">É móvel</span>
-        </h1>
+        </h1> -->
         <div class="container" :class="isMobile ? 'screenMobile' : 'screenDesktop'">
             <div class="card" v-for="produto in produtos" :key="produto.id">
                 <h1 class="card--title">{{ produto.title }}</h1>
